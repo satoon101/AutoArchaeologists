@@ -65,8 +65,8 @@ function ProcessAllArchaeologists(playerID)
     end
 end
 
-Events.LoadGameViewStateDone.Add(LoadProcessAllIdleBuilders)
-Events.PlayerTurnActivated.Add(ProcessAllIdleBuilders)
+Events.LoadGameViewStateDone.Add(LoadProcessAllArchaeologists)
+Events.PlayerTurnActivated.Add(ProcessAllArchaeologists)
 
 function ProcessNewArchaeologist(playerID, unitID)
     if not FinishedInitialization then
