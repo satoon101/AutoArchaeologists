@@ -4,7 +4,7 @@ DigLocationsByPlotID = nil
 DigLocationsByUnitID = {}
 
 function GetDigSiteData()
-    local DigLocationsByPlotID = {}
+    DigLocationsByPlotID = {}
     local iW, iH = Map.GetGridSize()
     for x = 0, iW - 1 do
         for y = 0, iH - 1 do
