@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="88a58aff-4d8f-4424-b1e1-b8f46f3b2c67" version="1">
+
+    <Properties>
+        <Name>Auto Archaeologists</Name>
+        <Description>Archaeologists automatically move and extract artifacts.</Description>
+        <Teaser>Auto-Extract artifacts</Teaser>
+        <Authors>satoon101</Authors>
+        <CompatibleVersions>2.0</CompatibleVersions>
+    </Properties>
+
+    <InGameActions>
+
+        <AddUserInterfaces id="AutoArchaeologistsUI">
+            <Properties>
+                <Context>InGame</Context>
+            </Properties>
+            <File>scripts/UI/AutoArchaeologist_UI.xml</File>
+        </AddUserInterfaces>
+
+        <ImportFiles id="AutoArchaeologistsHelpers">
+            <File>scripts/UI/AutoArchaeologist_Constants.lua</File>
+            <File>scripts/UI/AutoArchaeologist_Helpers.lua</File>
+        </ImportFiles>
+
+    </InGameActions>
+
+    <Files>
+        <File>scripts/UI/AutoArchaeologist_Constants.lua</File>
+        <File>scripts/UI/AutoArchaeologist_Helpers.lua</File>
+        <File>scripts/UI/AutoArchaeologist_UI.lua</File>
+        <File>scripts/UI/AutoArchaeologist_UI.xml</File>
+    </Files>
+
+</Mod>

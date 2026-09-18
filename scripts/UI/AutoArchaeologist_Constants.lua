@@ -1,0 +1,8 @@
+CULTURAL_HERITAGE_INDEX = GameInfo.Civics["CIVIC_CULTURAL_HERITAGE"]
+
+ANTIQUITY_SITE_INDEX = GameInfo.Resource["RESOURCE_ANTIQUITY_SITE"]
+SHIPWRECK_INDEX = GameInfo.Resource["RESOURCE_SHIPWRECK"]
+
+ARCHAEOLOGIST_INDEX = GameInfo.Units["UNIT_ARCHAEOLOGIST"].Index
+
+print("=== Auto AutoArchaeologists (Constants) Loaded ===")
