@@ -73,6 +73,24 @@ function ProcessNewArchaeologist(playerID, unitID)
         return
     end
 
+    local player = Players[playerID]
+    if player == nil then
+        return
+    end
+
+    if not player:IsHuman() then
+        return
+    end
+
+    local unit = UnitManager.GetUnit(playerID, unitID)
+    if unit == nil then
+        return
+    end
+
+    if unit:GetType() ~= ARCHAEOLOGIST_INDEX then
+        return
+    end
+
     local plotID = FindClosestDigSite(playerID, unitID)
     if plotID ~= nil then
         DigLocationsByPlotID[plotID] = unitID
