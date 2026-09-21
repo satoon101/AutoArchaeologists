@@ -15,7 +15,7 @@
             <Properties>
                 <Context>InGame</Context>
             </Properties>
-            <File>scripts/UI/AutoArchaeologist_UI.xml</File>
+            <File>scripts/UI/AutoArchaeologist.xml</File>
         </AddUserInterfaces>
 
         <ImportFiles id="AutoArchaeologistsHelpers">
@@ -28,8 +28,8 @@
     <Files>
         <File>scripts/UI/AutoArchaeologist_Constants.lua</File>
         <File>scripts/UI/AutoArchaeologist_Helpers.lua</File>
-        <File>scripts/UI/AutoArchaeologist_UI.lua</File>
-        <File>scripts/UI/AutoArchaeologist_UI.xml</File>
+        <File>scripts/UI/AutoArchaeologist.lua</File>
+        <File>scripts/UI/AutoArchaeologist.xml</File>
     </Files>
 
 </Mod>
