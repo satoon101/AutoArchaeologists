@@ -7,23 +7,20 @@ print("=== Auto Archaeologists (UI) Loading ===")
 
 include("AutoArchaeologist_Helpers")
 
-FinishedInitialization = false
+MovementEnabled = false
 
 function LoadProcessAllArchaeologists()
-    FinishedInitialization = true
-    ProcessAllArchaeologists()
+    local playerID = Game.GetLocalPlayer()
+    ProcessAllArchaeologists(playerID)
 end
 
 function ProcessAllArchaeologists(playerID)
-    if playerID == nil then
-        playerID = Game.GetLocalPlayer()
-    end
-
     local player = Players[playerID]
     if player == nil or not player:IsHuman() then
         return
     end
 
+    MovementEnabled = true
     local civics = player:GetCulture()
     if not civics:HasCivic(CULTURAL_HERITAGE_INDEX) then
         return
@@ -68,26 +65,24 @@ end
 Events.LoadGameViewStateDone.Add(LoadProcessAllArchaeologists)
 Events.PlayerTurnActivated.Add(ProcessAllArchaeologists)
 
+function DisableMovement()
+    MovementEnabled = false
+end
+
+Events.PlayerTurnDeactivated.Add(DisableMovement)
+
 function ProcessNewArchaeologist(playerID, unitID)
-    if not FinishedInitialization then
+    if not MovementEnabled then
         return
     end
 
     local player = Players[playerID]
-    if player == nil then
-        return
-    end
-
-    if not player:IsHuman() then
+    if player == nil or not player:IsHuman() then
         return
     end
 
     local unit = UnitManager.GetUnit(playerID, unitID)
-    if unit == nil then
-        return
-    end
-
-    if unit:GetType() ~= ARCHAEOLOGIST_INDEX then
+    if unit == nil or unit:GetType() ~= ARCHAEOLOGIST_INDEX then
         return
     end
 
